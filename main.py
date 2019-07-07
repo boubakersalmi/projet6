@@ -16,5 +16,6 @@ class Action:
         self.corporatebg = wallpaper_update()
 
 if __name__ == '__main__':
+    logger.info(chemindetoilestart)
     Action()
-    logger.info(chemindetoile)
+    logger.info(chemindetoileend)
