@@ -23,7 +23,7 @@ import socket
 ## lors de la génération du log, l'heure et la date d'éxecution apparaitront dans le modèle jj/mm/aaaa hh:mm:ss
 ## le logger a été définit afin de pouvoir faire apparaitre les éléments voulu dans le fichier de log. celui-ci peut etre adapté
 logging.basicConfig(
-    filename=r'C:\Users\booba\PycharmProjects\Projet6\logfile.log',
+    filename=r'S:\Booba\configfiles\logfile.log',
     format="%(asctime)s - %(message)s",
     datefmt="%d/%m/%Y %H:%M:%S",
     level=logging.INFO
@@ -47,7 +47,7 @@ chemindetoilestart = "**************** DEBUT DE SESSION *******************"
 ## le nom de l'utilisateur est celui du hostname windows afin de permettre a la fonction gethostname de la récupérer.
 ## un logger.info a été rajouté afin de faire apparaitre la relation entre utilisateur et service dans le fichier de log
 
-fichierutilisateurservices = r'S:\Booba\Pythonrepo\usersandservices.csv'
+fichierutilisateurservices = r'S:\Booba\configfiles\usersandservices.csv'
 
 def get_hostname_service():
     # Traitement du csv
@@ -60,7 +60,6 @@ def get_hostname_service():
     # On cherche a quel service il appartient
     for hostname, service in us_data:
         if hostname == current_hostname:
-            logger.info(("Il a été définit que", current_hostname, "appartient au service", service))
             break
     else:
         raise Exception(
@@ -76,11 +75,11 @@ def get_hostname_service():
 servicesconcerne = get_hostname_service()
 
 if servicesconcerne == "Technique":
-    config_data = r'C:\Users\booba\Desktop\filerepo\fond_ecran_technique.txt'
+    config_data = r'S:\Booba\configfiles\fond_ecran_technique.txt'
 elif servicesconcerne == "RH":
-    config_data = r'C:\Users\booba\Desktop\filerepo\fond_ecran_rh.txt'
+    config_data = r'S:\Booba\configfiles\fond_ecran_rh.txt'
 elif servicesconcerne == "Commercial":
-    config_data = r'C:\Users\booba\Desktop\filerepo\fond_ecran_commerciaux.txt'
+    config_data = r'S:\Booba\configfiles\fond_ecran_commerciaux.txt'
 else:
     print("Impossible de definir le service de l'utilisateur")
 
@@ -124,7 +123,7 @@ CHEMIN_BUREAU = r'C:\Users\booba\Desktop'
 permission_octal = 777
 
 ## fichier dans lequel nous retrouverons les éléments concernés par le tri
-typeelementsconfig = r'S:\Booba\Pythonrepo\type_fichier.json'
+typeelementsconfig = r'S:\Booba\configfiles\type_fichier.json'
 
 ## creation du dossier si non existant
 def creer_dossier(chemin_dossier):
@@ -148,7 +147,7 @@ def creer_version(nouveau_chemin):
         )
         nouveau_chemin = os.path.join(
             CHEMIN_BUREAU,
-            dossier,
+            chemin_dossier,
             nom_fichier_avec_version
         )
     return nouveau_chemin
@@ -193,7 +192,7 @@ def DesktopCleaner ():
                 ## on déplace effectivement le fichier dans le dossier
                 os.rename(chemin_original, nouveau_chemin)
 
-## definition d'un else permettant d'informer du non déplacement de fichier
+        ## definition d'un else permettant d'informer du non déplacement de fichier
         else:
             print("Pas de fichiers a ranger pour le dossier %s." % dossier)
             logger.info("Aucune modification n'a été apportée au dossier %s" % dossier)
