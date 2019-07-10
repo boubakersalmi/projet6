@@ -1,7 +1,6 @@
 Utilisation du programme
 
 Ce programme permet d'effectuer 3 taches :
-<<<<<<< HEAD
 
     modifier le fond d'écran de façon automatique avec un fond adaptatif se changeant quotidiennement.
     ranger le bureau afin que les fichiers du bureau soient systématiquement dans des dossiers.
@@ -29,19 +28,24 @@ les fonds d'écran sont disponibles dans le réseau :
  - pour la compta : S:\Booba\compta
  - pour le service technique  : S:\Booba\Technique
  - pour le service RH : S:\Booba\rh
->>>>>>> c04f98535f3b08e86fc30dc5d83b90da109de280
+
 
 Le programme a été organisé de telle façon a ce que pour modifier les fichiers sources, il suffit de le faire depuis le réseau et non depuis le programme.
 
 Chacune des fonctions a été détaillée afin d'apporter des explications sur son utilisation.
 
-<<<<<<< HEAD
+
 Ce programme a été créé dans le cadre d'un projet d'étude Openclassroom.
 
-License : cc
+License : MIT
 =======
 Ce programme a été créé dans le cadre d'un projet d'étude Openclassroom.
->>>>>>> c04f98535f3b08e86fc30dc5d83b90da109de280
 
-Contributors : 
-Contributions free
+Pour contribuer / Contributing : 
+
+    Fork it
+    Create your feature branch (git checkout -b example)
+    Commit your changes (git commit -am 'vos changements / idées')
+    Push to the branch (git push origin example)
+    Create new Pull Request
+
